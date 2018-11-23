@@ -28,8 +28,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="請輸入聯絡電話"
-        android:inputType="phone"
+        android:hint="@string/input_hint"
+        android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="確定"
+        android:text="@string/input_confirm"
         android:theme="@style/MyButton"
         app:layout_constraintStart_toStartOf="@+id/editName"
         app:layout_constraintTop_toBottomOf="@+id/editName" />
@@ -50,7 +50,7 @@
         android:layout_height="49dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="清除"
+        android:text="@string/input_clear"
         android:theme="@style/MyButton"
         app:layout_constraintStart_toEndOf="@+id/btnConfirm"
         app:layout_constraintTop_toBottomOf="@+id/editName" />

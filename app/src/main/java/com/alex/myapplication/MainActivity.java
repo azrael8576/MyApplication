@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String result = edtName.getText().toString();
                 txtName.setText(result);
-                Toast.makeText(getApplicationContext(),"您好" + result,Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),getString(R.string.toast_hello) + result,Toast.LENGTH_LONG).show();
             }
         });
         btnClear.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private void showClearDialog() {
             new AlertDialog.Builder(MainActivity.this)
                     .setTitle("清除")
-                    .setMessage("清除您已輸入的資料")
+                    .setMessage(R.string.dialog_clear_message)
                     .setPositiveButton("確定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
