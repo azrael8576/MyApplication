@@ -1,33 +1,66 @@
 package com.alex.myapplication;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    TextView myTextView;
-    EditText myEditText;
-    Button myButton;
+    TextView txtName;
+    EditText edtName;
+    Button btnConfirm;
+    Button btnClear;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViews();
-        myButton.setOnClickListener(new View.OnClickListener() {
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String result = myEditText.getText().toString();
-                myTextView.setText(result);
+                String result = edtName.getText().toString();
+                txtName.setText(result);
+                Toast.makeText(getApplicationContext(),"您好" + result,Toast.LENGTH_LONG).show();
+            }
+        });
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showClearDialog();
             }
         });
     }
 
+
+
     private void findViews() {
-        myTextView = findViewById(R.id.myTextView);
-        myEditText = findViewById(R.id.myEditText);
-        myButton = findViewById(R.id.myButton);
+        edtName = findViewById(R.id.editName);
+        txtName = findViewById(R.id.txtName);
+        btnConfirm = findViewById(R.id.btnConfirm);
+        btnClear = findViewById(R.id.btnClear);
+    }
+    private void showClearDialog() {
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("清除")
+                    .setMessage("清除您已輸入的資料")
+                    .setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            edtName.setText("");
+                            txtName.setText("");
+                        }
+                    })
+                    .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    })
+                    .show();
     }
 }
