@@ -1,6 +1,7 @@
 package com.alex.myapplication;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
                 String result = edtName.getText().toString();
                 txtName.setText(result);
                 Toast.makeText(getApplicationContext(),getString(R.string.toast_hello) + result,Toast.LENGTH_LONG).show();
+                //建立Intent
+                Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+                intent.putExtra("name",result);
+                startActivity(intent);
             }
         });
         btnClear.setOnClickListener(new View.OnClickListener() {

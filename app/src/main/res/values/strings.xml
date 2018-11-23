@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="input_hint">Your name</string>
+    <string name="input_confirm">OK</string>
+    <string name="input_clear">Clear</string>
+    <string name="toast_hello">Hi，</string>
+    <string name="dialog_clear_message">Clear name？</string>
 </resources>
